@@ -5,73 +5,83 @@ const app = express();
 app.use(express.json());
 
 const PORT = 3000;
+const TIKTOK_USERNAME = process.env.TIKTOK_USERNAME || 'adrianamimualice';
 
-// FILA DE EVENTOS (tipo buffer)
+// Fila de eventos consumida pelo OpenMP (GET /events).
 let eventQueue = [];
 
-// CONFIG
-let tiktokUsername = "adrianamimualice";
-let tiktokConnection = new WebcastPushConnection(tiktokUsername);
+const tiktokConnection = new WebcastPushConnection(TIKTOK_USERNAME);
 
-// Conectar
-tiktokConnection.connect()
-.then(() => {
-    console.log(`Conectado ao TikTok como ${tiktokUsername}`);
-})
-.catch(err => {
-    console.error('Erro ao conectar:', err);
-});
-
-// =========================
-// EVENTOS DO TIKTOK
-// =========================
-
-// CHAT
-tiktokConnection.on('chat', data => {
-    const event = {
-        type: "chat",
-        user: data.uniqueId,
-        message: data.comment
-    };
-
-    console.log(`${data.uniqueId} mandou ${data.comment}`);
-
+function queueEvent(event) {
     eventQueue.push(event);
 
+    // Proteção simples para não crescer sem limite se o servidor SA:MP estiver offline.
+    if (eventQueue.length > 500) {
+        eventQueue = eventQueue.slice(-500);
+    }
+}
 
+function normalizeUser(data) {
+    return data?.uniqueId || data?.nickname || 'unknown_user';
+}
+
+async function connectTikTok() {
+    try {
+        await tiktokConnection.connect();
+        console.log(`[TIKTOK] Conectado à live de @${TIKTOK_USERNAME}`);
+    } catch (err) {
+        console.error('[TIKTOK] Erro ao conectar:', err?.message || err);
+        console.log('[TIKTOK] Tentando reconectar em 5 segundos...');
+        setTimeout(connectTikTok, 5000);
+    }
+}
+
+// CHAT
+tiktokConnection.on('chat', (data) => {
+    const event = {
+        type: 'chat',
+        user: normalizeUser(data),
+        message: data?.comment || ''
+    };
+
+    if (!event.message) {
+        return;
+    }
+
+    console.log(`[CHAT] ${event.user}: ${event.message}`);
+    queueEvent(event);
 });
 
 // PRESENTES (GIFTS)
-tiktokConnection.on('gift', data => {
+tiktokConnection.on('gift', (data) => {
     const event = {
-        type: "gift",
-        user: data.uniqueId,
-        giftId: data.giftId,
-        giftName: data.giftName,
-        repeatCount: data.repeatCount
+        type: 'gift',
+        user: normalizeUser(data),
+        giftId: data?.giftId || 0,
+        giftName: data?.giftName || 'UnknownGift',
+        repeatCount: data?.repeatCount || 1
     };
 
-    eventQueue.push(event);
+    console.log(`[GIFT] ${event.user} enviou ${event.repeatCount}x ${event.giftName}`);
+    queueEvent(event);
 });
 
-// =========================
-// API ENDPOINT
-// =========================
+tiktokConnection.on('disconnected', () => {
+    console.warn('[TIKTOK] Conexão encerrada. Reconectando em 5 segundos...');
+    setTimeout(connectTikTok, 5000);
+});
 
-// Pawn vai chamar isso
-app.get('/events', (req, res) => {
+// OpenMP chama isso para buscar e limpar os eventos pendentes.
+app.get('/events', (_, res) => {
     res.json(eventQueue);
-    
-    // Limpa fila após envio
     eventQueue = [];
 });
 
-// Health check
-app.get('/', (req, res) => {
-    res.send("TikTok API Online");
+app.get('/', (_, res) => {
+    res.send('TikTok API Online');
 });
 
-// Start server
 app.listen(PORT, () => {
-    console.log(`API rodando em http://localhost:${PORT}`);
+    console.log(`[API] Rodando em http://127.0.0.1:${PORT}`);
+    connectTikTok();
 });
