@@ -1,0 +1,18 @@
+{
+    "VsCodeTaskButtons.tasks": 
+    [
+        {
+            "label": "🛠 Compile Pawn",
+            "task": "build-normal",
+            "tooltip": "Compilar GameMode Pawn"
+        },
+
+        {
+            "label": "▶ Run Server",
+            "task": "start-dev",
+            "tooltip": "Ligar Servidor"
+        },
+    ],
+
+    "files.autoGuessEncoding": true
+}
