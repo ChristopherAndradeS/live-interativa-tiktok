@@ -6,23 +6,52 @@ app.use(express.json());
 
 const PORT = 3000;
 const TIKTOK_USERNAME = process.env.TIKTOK_USERNAME || 'adrianamimualice';
+const MAX_QUEUE_SIZE = 500;
 
 // Fila de eventos consumida pelo OpenMP (GET /events).
 let eventQueue = [];
 
 const tiktokConnection = new WebcastPushConnection(TIKTOK_USERNAME);
 
-function queueEvent(event) {
-    eventQueue.push(event);
+function removeAccents(value = '') {
+    return String(value)
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+}
 
-    // Proteção simples para não crescer sem limite se o servidor SA:MP estiver offline.
-    if (eventQueue.length > 500) {
-        eventQueue = eventQueue.slice(-500);
+function sanitizeForPawn(value = '', maxLength = 64) {
+    const normalized = removeAccents(value)
+        .replace(/[^\x20-\x7E]/g, '')
+        .replace(/["\\]/g, '')
+        .trim();
+
+    return normalized.slice(0, Math.max(0, maxLength));
+}
+
+function toInt(value, fallback = 0) {
+    const parsed = Number.parseInt(value, 10);
+    return Number.isFinite(parsed) ? parsed : fallback;
+}
+
+function queueEvent(type, data = {}) {
+    eventQueue.push({
+        type,
+        data,
+        timestamp: Date.now()
+    });
+
+    // Proteção simples para não crescer sem limite se o servidor OpenMP estiver offline.
+    if (eventQueue.length > MAX_QUEUE_SIZE) {
+        eventQueue = eventQueue.slice(-MAX_QUEUE_SIZE);
     }
 }
 
-function normalizeUser(data) {
-    return data?.uniqueId || data?.nickname || 'unknown_user';
+function normalizeIdentity(data = {}) {
+    const uniqueId = sanitizeForPawn(data?.uniqueId || data?.nickname || 'unknown_user', 64);
+    const nickname = sanitizeForPawn(data?.nickname || data?.uniqueId || 'unknown_user', 64);
+    const userId = sanitizeForPawn(data?.userId || '', 32);
+
+    return { uniqueId, nickname, userId };
 }
 
 async function connectTikTok() {
@@ -38,32 +67,113 @@ async function connectTikTok() {
 
 // CHAT
 tiktokConnection.on('chat', (data) => {
-    const event = {
-        type: 'chat',
-        user: normalizeUser(data),
-        message: data?.comment || ''
-    };
+    const identity = normalizeIdentity(data);
+    const comment = sanitizeForPawn(data?.comment || '', 144);
 
-    if (!event.message) {
+    if (!comment) {
         return;
     }
 
-    console.log(`[CHAT] ${event.user}: ${event.message}`);
-    queueEvent(event);
+    queueEvent('chat', {
+        uniqueId: identity.uniqueId,
+        nickname: identity.nickname,
+        userId: identity.userId,
+        comment,
+        isModerator: Boolean(data?.isModerator),
+        isNewGifter: Boolean(data?.isNewGifter),
+        isSubscriber: Boolean(data?.isSubscriber)
+    });
+
+    console.log(`[CHAT] ${identity.nickname}: ${comment}`);
 });
 
 // PRESENTES (GIFTS)
 tiktokConnection.on('gift', (data) => {
-    const event = {
-        type: 'gift',
-        user: normalizeUser(data),
-        giftId: data?.giftId || 0,
-        giftName: data?.giftName || 'UnknownGift',
-        repeatCount: data?.repeatCount || 1
+    const identity = normalizeIdentity(data);
+    const repeatCount = Math.max(1, toInt(data?.repeatCount, 1));
+    const diamondCount = Math.max(0, toInt(data?.diamondCount, 0));
+    const giftName = sanitizeForPawn(data?.giftName || 'UnknownGift', 64);
+    const repeatEnd = Boolean(data?.repeatEnd);
+
+    const payload = {
+        uniqueId: identity.uniqueId,
+        nickname: identity.nickname,
+        giftName,
+        repeatCount,
+        diamondCount
     };
 
-    console.log(`[GIFT] ${event.user} enviou ${event.repeatCount}x ${event.giftName}`);
-    queueEvent(event);
+    if (repeatEnd) {
+        queueEvent('giftEnd', payload);
+        console.log(`[GIFT-END] ${identity.nickname} finalizou combo ${repeatCount}x ${giftName}`);
+    } else {
+        queueEvent('gift', payload);
+        console.log(`[GIFT] ${identity.nickname} enviou ${repeatCount}x ${giftName}`);
+    }
+});
+
+// LIKES
+tiktokConnection.on('like', (data) => {
+    const identity = normalizeIdentity(data);
+
+    queueEvent('like', {
+        uniqueId: identity.uniqueId,
+        nickname: identity.nickname,
+        likeCount: Math.max(0, toInt(data?.likeCount, 0)),
+        totalLikeCount: Math.max(0, toInt(data?.totalLikeCount, 0))
+    });
+});
+
+// FOLLOW
+tiktokConnection.on('follow', (data) => {
+    const identity = normalizeIdentity(data);
+
+    queueEvent('follow', {
+        uniqueId: identity.uniqueId,
+        nickname: identity.nickname
+    });
+});
+
+// ENTRADA NA LIVE
+tiktokConnection.on('member', (data) => {
+    const identity = normalizeIdentity(data);
+
+    queueEvent('member', {
+        uniqueId: identity.uniqueId,
+        nickname: identity.nickname,
+        userId: identity.userId
+    });
+});
+
+// INFO DE SALA
+tiktokConnection.on('roomUser', (data) => {
+    queueEvent('roomUser', {
+        viewerCount: Math.max(0, toInt(data?.viewerCount, 0)),
+        likeCount: Math.max(0, toInt(data?.likeCount, 0))
+    });
+});
+
+// INSCRIÇÃO
+tiktokConnection.on('subscribe', (data) => {
+    const identity = normalizeIdentity(data);
+
+    queueEvent('subscribe', {
+        uniqueId: identity.uniqueId,
+        nickname: identity.nickname,
+        subscribeInfo: {
+            isSubscriber: Boolean(data?.isSubscriber),
+            subscribeType: sanitizeForPawn(data?.subscribeType || '', 32),
+            subMonth: Math.max(0, toInt(data?.subMonth, 0)),
+            oldSubscribeStatus: Math.max(0, toInt(data?.oldSubscribeStatus, 0)),
+            upgrading: Boolean(data?.upgrading)
+        }
+    });
+});
+
+// FIM DA LIVE
+tiktokConnection.on('streamEnd', () => {
+    queueEvent('streamEnd', {});
+    console.warn('[TIKTOK] Live encerrada (streamEnd).');
 });
 
 tiktokConnection.on('disconnected', () => {
