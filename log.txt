@@ -5115,3 +5115,203 @@ Loaded 23 component(s) from C:\Users\chris\Desktop\live-interativa-tiktok\compon
 [2026-04-04T14:41:38-0300] [Info] [ TIKTOK ] Polling de eventos iniciado.
 [2026-04-04T14:41:38-0300] [Info] Legacy Network started on port 7777
 [2026-04-04T14:41:43-0300] [Info] veh | 522 89 0
+[2026-04-04T14:41:58-0300] [Info] veh | 522 76 0
+[2026-04-04T14:42:10-0300] [Info] [connection] incoming connection: 192.168.1.5:42664 id: 0
+[2026-04-04T14:42:10-0300] [Info] [join] Christopher has joined the server (0:192.168.1.5)
+[2026-04-04T14:42:26-0300] [Info] veh | 522 6 0
+[2026-04-04T14:42:36-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12030: A conexão com o servidor foi interrompida de modo anormal
+
+[2026-04-04T14:42:36-0300] [Info] [ TIKTOK ] Request falhou | request = 57 | code = 1 | message = WinHttpSendRequest: 12030: A conexão com o servidor foi interrompida de modo anormal
+
+[2026-04-04T14:42:39-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:39-0300] [Info] [ TIKTOK ] Request falhou | request = 58 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:41-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:41-0300] [Info] [ TIKTOK ] Request falhou | request = 59 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:41-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:42-0300] [Info] [ TIKTOK ] Request falhou | request = 60 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:42-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:42-0300] [Info] [ TIKTOK ] Request falhou | request = 61 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:43-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:43-0300] [Info] [ TIKTOK ] Request falhou | request = 62 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:44-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:44-0300] [Info] [ TIKTOK ] Request falhou | request = 63 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:45-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:45-0300] [Info] [ TIKTOK ] Request falhou | request = 64 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:46-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:46-0300] [Info] [ TIKTOK ] Request falhou | request = 65 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:47-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:47-0300] [Info] [ TIKTOK ] Request falhou | request = 66 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:48-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:48-0300] [Info] [ TIKTOK ] Request falhou | request = 67 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:49-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:49-0300] [Info] [ TIKTOK ] Request falhou | request = 68 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:50-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:50-0300] [Info] [ TIKTOK ] Request falhou | request = 69 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:51-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:51-0300] [Info] [ TIKTOK ] Request falhou | request = 70 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:52-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:52-0300] [Info] [ TIKTOK ] Request falhou | request = 71 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:53-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:53-0300] [Info] [ TIKTOK ] Request falhou | request = 72 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:54-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:54-0300] [Info] [ TIKTOK ] Request falhou | request = 73 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:55-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:55-0300] [Info] [ TIKTOK ] Request falhou | request = 74 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:56-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:56-0300] [Info] [ TIKTOK ] Request falhou | request = 75 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:57-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:57-0300] [Info] [ TIKTOK ] Request falhou | request = 76 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:58-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:58-0300] [Info] [ TIKTOK ] Request falhou | request = 77 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:59-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:42:59-0300] [Info] [ TIKTOK ] Request falhou | request = 78 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:00-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:01-0300] [Info] [ TIKTOK ] Request falhou | request = 79 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:01-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:01-0300] [Info] [ TIKTOK ] Request falhou | request = 80 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:02-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:02-0300] [Info] [ TIKTOK ] Request falhou | request = 81 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:03-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:03-0300] [Info] [ TIKTOK ] Request falhou | request = 82 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:04-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:04-0300] [Info] [ TIKTOK ] Request falhou | request = 83 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:05-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:05-0300] [Info] [ TIKTOK ] Request falhou | request = 84 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:06-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:06-0300] [Info] [ TIKTOK ] Request falhou | request = 85 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:07-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:07-0300] [Info] [ TIKTOK ] Request falhou | request = 86 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:08-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:08-0300] [Info] [ TIKTOK ] Request falhou | request = 87 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:09-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:09-0300] [Info] [ TIKTOK ] Request falhou | request = 88 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:10-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:10-0300] [Info] [ TIKTOK ] Request falhou | request = 89 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:11-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:11-0300] [Info] [ TIKTOK ] Request falhou | request = 90 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:13-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:13-0300] [Info] [ TIKTOK ] Request falhou | request = 91 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:13-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:13-0300] [Info] [ TIKTOK ] Request falhou | request = 92 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:14-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:14-0300] [Info] [ TIKTOK ] Request falhou | request = 93 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:15-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:15-0300] [Info] [ TIKTOK ] Request falhou | request = 94 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:16-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:16-0300] [Info] [ TIKTOK ] Request falhou | request = 95 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:17-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:17-0300] [Info] [ TIKTOK ] Request falhou | request = 96 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:18-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:18-0300] [Info] [ TIKTOK ] Request falhou | request = 97 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:19-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:19-0300] [Info] [ TIKTOK ] Request falhou | request = 98 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:20-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:21-0300] [Info] [ TIKTOK ] Request falhou | request = 99 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:21-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:21-0300] [Info] [ TIKTOK ] Request falhou | request = 100 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:23-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:23-0300] [Info] [ TIKTOK ] Request falhou | request = 101 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:23-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:24-0300] [Info] [ TIKTOK ] Request falhou | request = 102 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:24-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:25-0300] [Info] [ TIKTOK ] Request falhou | request = 103 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:26-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:26-0300] [Info] [ TIKTOK ] Request falhou | request = 104 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:26-0300] [Info] ERROR: HTTP error WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
+[2026-04-04T14:43:27-0300] [Info] [ TIKTOK ] Request falhou | request = 105 | code = 1 | message = WinHttpSendRequest: 12029: Uma conexão com o servidor não pôde ser estabelecida
+
